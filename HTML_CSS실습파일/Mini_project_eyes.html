@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini_project_eyes</title>
+    <style>
+        .circle{
+            width: 800px;
+            height: 800px;
+            margin: 20vh auto;
+            border: 5px solid rgb(224, 178, 155); 
+            background-color: rgb(247, 231, 223);
+            border-radius: 1000px;
+            position: relative;
+            
+        }
+        .box{
+            width: 40px;
+            height: 100px;
+            background-color: orangered   ;
+            position: absolute;
+            bottom: 20px;
+            transform: translate(-50%, -50%);
+            left: 30%;
+            top: 70%;
+            border-radius: 8px;
+            
+        /* transform: translateX(-50%); */
+            
+
+        
+        }
+        .eyes_1{
+            width: 800px;
+            height: 120px;
+            position: absolute;
+            border-color: black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+
+        }
+        .eyes_2{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+
+        }
+        .eye{
+            
+            width: 150px;
+            height: 150px;
+            border: 5px solid rgb(17, 11, 1); 
+            border-style: solid; 
+            border-radius: 100px;
+            position: relative;
+            
+            /*ball 때문에 relative 설정*/
+        }
+        /*eye가 양 옆으로 붙어야하니깐 float 씀*/
+        .eye:nth-child(1){
+            float: left;
+        }
+        .eye:nth-child(2){
+            float: right;
+        }
+        .ball{
+            /*absolute 사용>>위로부터 80px, 왼쪽으로부터 30px*/
+        /*absolute는 상위기준, eye가 relative가 아니면 화면 기준이라
+        눈알(ball) 형성이 제대로 안 됨
+        */
+            width: 30px;
+            height: 30px;
+            background-color: rgb(233, 81, 106);
+            border-radius: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-90%, -50%); 
+            animation: moving 2s 0s linear infinite alternate; 
+
+        
+        
+        
+            
+
+            
+            }
+        .ball:hover{
+            animation-play-state: paused; /*커서를 대며 멈춤*/
+            /* animation-play-state: running; 커서를 대도 계속 진행 */
+
+            /*running, pause*/
+
+        }
+        @media screen and (max-width: 800px){
+            div.circle{
+                background-color: rgb(231, 21, 126);
+            }
+            div.eye{
+                background-color: rgb(38, 35, 206);
+                border-radius: 8px; 
+                
+            }
+            div.ball{
+                background-color: rgb(181, 231, 43); 
+                border-radius: 8px; 
+                width: 30px;
+                height: 30px;
+
+                
+            }
+            
+        }
+        @media screen and (min-width: 2000px){
+            div.circle{
+                background-color: rgb(27, 206, 212);
+            }
+            div.eye{
+                background-color: rgb(15, 224, 50);
+                border-radius: 8px; 
+                
+            }
+            div.ball{
+                background-color: rgb(221, 76, 32); 
+                border-radius: 8px; 
+                width: 30px;
+                height: 30px;
+
+                
+            }
+            
+        }
+        
+        
+        @keyframes moving { /*lfet 30에서 left 120으로 이동하는 프레임 설정 */
+            from{
+                left: 30px;
+                }
+            to{
+                left: 120px;
+            }
+        }
+            
+    </style>
+        
+</head>
+<body>
+    <div class="circle">
+    <div class="eyes_1">
+        <div class="eye">
+            <div class="ball"></div>
+        </div>
+    </div>
+    <div class="eyes_2">
+        <div class="eye">
+            <div class="ball"></div>
+        </div>
+    </div>
+
+    <div class="box"></div>
+</div>
+
+</body>
+</html>

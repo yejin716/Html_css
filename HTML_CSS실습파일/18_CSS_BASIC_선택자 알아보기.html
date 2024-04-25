@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--viewport 반응형 웹-->
+    <title>선택자 알아보기</title>
+    <style>
+        /*
+    기호와 함께 사용하는 속성 선택자
+    * : 값의 포함 여부
+    ^ : 값의 시작 여부
+    $ : 값의 끝 여부
+      */
+    img[alt]{
+        border: 5px dashed red; 
+    }
+    img[width]{
+        border: 5px dashed blue;
+    }
+    img[width*='2']{
+        border: 5px dashed green; /* width에 2가 포함된다면 실행 */
+    }
+    img[width^='1']{
+        border: 5px dashed pink;  /* width가 1로 시작한다면 실행 */
+    }
+    img[width$='0']{
+        border: 5px dashed black;  /* width가 0으로 끝난다면 실행 */
+    }
+    body p {
+        color: blue  ;
+    }
+    /*body em 공백으로 하위요소 접근*/
+    body em {
+        color: red;
+    }
+    
+    /*p > em '>'활용 자식요소 접근*/
+    p > em{
+        color: orange;
+    }
+    /*img, p 태그는 형제 요소
+    '+' : three 라는 id 바로 다음에 오는 형제 'p'에 가기 */
+    #three + p{
+        color: darkgray;
+    }
+    /*'~' : p 태그를 다 가져오기*/
+    #three ~ p{
+        color: violet;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <img src = "./puppy_01.jpg" width="120" alt="AI DOG">
+    <img src = "./puppy_01.jpg" width="120" >
+    <img src = "./puppy_01.jpg" width="120" id="three">
+
+    <p>닥터윌이 미드저니로 만든 인공지능 개, 닥터 독이예요.</p>
+    <p>닥터 독, 어떤가요?</p>
+    <p>가지고 싶을 정도로 <em>귀엽죠? 깜찍하죠?</em></p>
+    <p>닥터윌도 그렇답니다. ㅋㅋ</p>
+</body>
+</html>
